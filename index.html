@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Migration Hub - The Invisible Crisis</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-globe-americas"></i> Climate Migration Hub
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('south-asia')">South Asia Story</a></li>
+                <li><a href="#" onclick="showPage('goa-impact')">Goa Impact</a></li>
+                <li><a href="#" onclick="showPage('solutions')">Solutions</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home" class="page-section active">
+        <div class="hero">
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <h1>The Invisible Climate Crisis</h1>
+                    <p>Climate change isn't just about melting ice caps - it's about the millions forced to leave their homes</p>
+                    
+                    <div class="live-counter">
+                        <div class="counter-number" id="migration-counter">1,247,892</div>
+                        <p>People displaced by climate events this year</p>
+                        <small>* Simulated real-time data based on UN estimates</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="stats-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="stat-number">21.5M</div>
+                    <p>People displaced annually by weather disasters</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-thermometer-full"></i>
+                    </div>
+                    <div class="stat-number">1.1B</div>
+                    <p>People at high risk of displacement by 2050</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <div class="stat-number">570M</div>
+                    <p>People living in low-elevation coastal zones</p>
+                </div>
+            </div>
+
+            <!-- <div class="map-container" data-aos="fade-up" data-aos-delay="400">
+                <h2>Global Migration Flows - Real Time</h2>
+                <div class="map-placeholder">
+                    <div class="migration-flow"></div>
+                    <div class="migration-flow"></div>
+                    <div class="migration-flow"></div>
+                    <p>Interactive Migration Map<br><i class="fas fa-chart-line"></i><br>Tracking movement patterns across continents</p>
+                </div>
+                <p><small>Migration flows showing displacement from climate-vulnerable regions</small></p>
+            </div> -->
+            <div class="map-container" data-aos="fade-up" data-aos-delay="400">
+    <h2>Global Migration Flows - Real Time</h2>
+    <div id="migration-map"></div>
+    <p><small>Migration flows showing displacement from climate-vulnerable regions</small></p>
+</div>
+        </div>
+    </section>
+
+    <!-- South Asian Story Page -->
+    <section id="south-asia" class="page-section">
+        <div class="container">
+            <div class="hero" style="padding: 80px 0 40px; margin-bottom: 3rem;">
+                <h1 data-aos="fade-up">The South Asian Climate Migration Story</h1>
+                <p data-aos="fade-up" data-aos-delay="200">How climate change is reshaping human geography in our region</p>
+            </div>
+
+            <div class="timeline" data-aos="fade-up">
+                <div class="timeline-item">
+                    <div class="timeline-year">2004</div>
+                    <h3>Indian Ocean Tsunami</h3>
+                    <p>230,000 people killed, millions displaced across Indian Ocean coastlines. First major climate-linked migration event of the century in South Asia.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2010</div>
+                    <h3>Pakistan Floods</h3>
+                    <p>20 million people affected, 1.9 million homes destroyed. Largest displacement event in Pakistan's history, with many never returning home.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2017</div>
+                    <h3>South Asian Floods</h3>
+                    <p>45 million people affected across India, Bangladesh, and Nepal. Climate migrants begin long-term movement to urban centers.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <h3>Cyclone Amphan</h3>
+                    <p>3 million people evacuated in India and Bangladesh. Sundarbans islands permanently submerged, forcing permanent relocation.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-year">2022</div>
+                    <h3>Pakistan Heatwave & Floods</h3>
+                    <p>33 million people affected, 1,700 killed. One-third of country underwater, creating climate refugee crisis.</p>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">Case Studies: Real Stories</h2>
+            <div class="case-studies">
+                <div class="case-study" data-aos="fade-up" data-aos-delay="100">
+                    <div class="case-image">
+                        <i class="fas fa-island-tropical"></i>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-title">Disappearing Sundarbans</div>
+                        <p>Ghoramara Island residents relocated to mainland India as sea levels rise. 70% of island submerged since 1960s, forcing 7,000 people to migrate.</p>
+                        <p><strong>Impact:</strong> Fishing communities lose traditional livelihoods, struggle with urban adaptation.</p>
+                    </div>
+                </div>
+
+                <div class="case-study" data-aos="fade-up" data-aos-delay="200">
+                    <div class="case-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-title">Drought Migration in Marathwada</div>
+                        <p>Consecutive droughts force farmers to migrate to Pune and Mumbai. 2.5 lakh people migrate annually from drought-affected districts.</p>
+                        <p><strong>Impact:</strong> Agricultural communities become urban laborers, children drop out of school.</p>
+                    </div>
+                </div>
+
+                <div class="case-study" data-aos="fade-up" data-aos-delay="300">
+                    <div class="case-image">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-title">Himalayan Glacier Retreat</div>
+                        <p>Glacial lake outburst floods force permanent relocation in Uttarakhand and Nepal. 15 million people at risk from glacier-fed river changes.</p>
+                        <p><strong>Impact:</strong> Mountain communities lose connection to ancestral lands, face cultural displacement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goa Impact Page -->
+    <section id="goa-impact" class="page-section">
+        <div class="container">
+            <div class="hero" style="padding: 80px 0 40px; margin-bottom: 3rem;">
+                <h1 data-aos="fade-up">Goa's Role in Climate Migration</h1>
+                <p data-aos="fade-up" data-aos-delay="200">How the coastal state becomes both destination and departure point</p>
+            </div>
+
+            <div class="impact-metrics">
+                <div class="metric-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="metric-value">15,000+</div>
+                    <div class="metric-label">Climate migrants in Goa annually</div>
+                </div>
+                
+                <div class="metric-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="metric-value">67%</div>
+                    <div class="metric-label">Coastal erosion affecting villages</div>
+                </div>
+                
+                <div class="metric-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="metric-value">12</div>
+                    <div class="metric-label">Villages at risk by 2050</div>
+                </div>
+                
+                <div class="metric-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="metric-value">₹2,400Cr</div>
+                    <div class="metric-label">Economic impact of migration</div>
+                </div>
+            </div>
+
+            <div class="case-studies">
+                <div class="case-study" data-aos="fade-up">
+                    <div class="case-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-title">Incoming Migration Patterns</div>
+                        <p><strong>From Maharashtra:</strong> Drought-affected farmers seeking construction work</p>
+                        <p><strong>From Karnataka:</strong> Coastal communities affected by erosion</p>
+                        <p><strong>From Kerala:</strong> Flood-displaced families seeking permanent relocation</p>
+                        <p><strong>Integration Challenges:</strong> Language barriers, skill mismatches, housing shortages</p>
+                    </div>
+                </div>
+
+                <div class="case-study" data-aos="fade-up" data-aos-delay="200">
+                    <div class="case-image">
+                        <i class="fas fa-waves"></i>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-title">Goa's Own Vulnerability</div>
+                        <p><strong>Coastal Erosion:</strong> Candolim, Calangute beaches retreating 2-3 meters annually</p>
+                        <p><strong>Monsoon Flooding:</strong> Increased intensity forcing temporary evacuations</p>
+                        <p><strong>Saltwater Intrusion:</strong> Agricultural lands becoming unusable</p>
+                        <p><strong>Future Risk:</strong> 30,000 Goans may need relocation by 2070</p>
+                    </div>
+                </div>
+
+                <div class="case-study" data-aos="fade-up" data-aos-delay="300">
+                    <div class="case-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="case-content">
+                        <div class="case-title">Economic Transformation</div>
+                        <p><strong>Labor Market:</strong> Construction sector 40% dependent on climate migrants</p>
+                        <p><strong>Remittances:</strong> ₹800 crores sent back to origin states annually</p>
+                        <p><strong>Infrastructure Stress:</strong> Urban services strained by population growth</p>
+                        <p><strong>Opportunity:</strong> Diverse workforce drives economic resilience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Page -->
+    <section id="solutions" class="page-section">
+        <div class="container">
+            <div class="hero" style="padding: 80px 0 40px; margin-bottom: 3rem;">
+                <h1 data-aos="fade-up">Solutions That Actually Work</h1>
+                <p data-aos="fade-up" data-aos-delay="200">Beyond awareness - actionable strategies for climate migration</p>
+            </div>
+
+            <h2 data-aos="fade-up">Policy Solutions</h2>
+            <div class="solutions-grid">
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="solution-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="solution-title">Climate Visa Program</div>
+                    <p>Legal recognition of climate refugees with dedicated visa categories. Streamlined processes for climate-displaced populations with work permits and integration support.</p>
+                </div>
+
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="solution-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="solution-title">Planned Relocation Programs</div>
+                    <p>Proactive relocation assistance before disasters strike. Government-backed housing, job training, and community preservation programs for at-risk populations.</p>
+                </div>
+
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="solution-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="solution-title">Climate Migration Fund</div>
+                    <p>International funding mechanism for climate displacement. Insurance schemes, compensation programs, and development aid for climate-resilient infrastructure.</p>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">Community Solutions</h2>
+            <div class="solutions-grid">
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="solution-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="solution-title">Integration Networks</div>
+                    <p>Community-led support systems connecting climate migrants with local families. Language training, cultural orientation, and social integration programs.</p>
+                </div>
+
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="solution-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="solution-title">Skill Development Hubs</div>
+                    <p>Training centers for climate migrants to develop urban-relevant skills. Focus on construction, hospitality, healthcare, and technology sectors.</p>
+                </div>
+
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="solution-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="solution-title">Climate-Resilient Communities</div>
+                    <p>Building adaptive capacity in vulnerable regions. Early warning systems, flood-resistant housing, and sustainable livelihood alternatives.</p>
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up">How You Can Help</h2>
+            <div class="action-form" data-aos="fade-up">
+                <h3>Support Climate Migrants in Your Community</h3>
+                <form id="support-form">
+                    <div class="form-group">
+                        <label for="support-type">How would you like to help?</label>
+                        <select id="support-type" name="support-type">
+                            <option value="">Choose an option</option>
+                            <option value="volunteer">Volunteer with local organizations</option>
+                            <option value="mentor">Provide mentorship/skills training</option>
+                            <option value="housing">Offer temporary housing support</option>
+                            <option value="employment">Connect migrants with job opportunities</option>
+                            <option value="donate">Make financial contributions</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Your Location</label>
+                        <input type="text" id="location" name="location" placeholder="City, State">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="skills">Your Skills/Resources</label>
+                        <textarea id="skills" name="skills" rows="3" placeholder="What skills or resources can you offer?"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact">Contact Information</label>
+                        <input type="email" id="contact" name="contact" placeholder="your.email@example.com">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Join the Support Network</button>
+                </form>
+            </div>
+
+            <div class="solutions-grid" style="margin-top: 3rem;">
+                <div class="solution-card" data-aos="fade-up">
+                    <div class="solution-icon">
+                        <i class="fas fa-vote-yea"></i>
+                    </div>
+                    <div class="solution-title">Advocate for Policy Change</div>
+                    <p>Contact your representatives about climate migration policies. Support organizations working on climate justice and refugee rights.</p>
+                    <a href="#" class="btn" style="margin-top: 1rem;">Find Your Representatives</a>
+                </div>
+
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="solution-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="solution-title">Educate & Raise Awareness</div>
+                    <p>Share stories of climate migrants in your community. Organize awareness events and support educational initiatives.</p>
+                    <a href="#" class="btn" style="margin-top: 1rem;">Download Resources</a>
+                </div>
+
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="solution-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="solution-title">Support Local Organizations</div>
+                    <p>Partner with NGOs working with climate migrants. Volunteer, donate, or provide professional services to support their work.</p>
+                    <a href="#" class="btn" style="margin-top: 1rem;">Find Organizations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Climate Migration Hub</h3>
+                    <p>Addressing the invisible crisis of climate-induced displacement through awareness, action, and advocacy.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="margin-left: 1rem;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="margin-left: 1rem;"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="margin-left: 1rem;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#" onclick="showPage('home')">Home</a>
+                    <a href="#" onclick="showPage('south-asia')">South Asia Story</a>
+                    <a href="#" onclick="showPage('goa-impact')">Goa Impact</a>
+                    <a href="#" onclick="showPage('solutions')">Solutions</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="#">Research Reports</a>
+                    <a href="#">Migration Data</a>
+                    <a href="#">Policy Papers</a>
+                    <a href="#">Support Organizations</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="mailto:info@climatemigrationhub.org">info@climatemigrationhub.org</a>
+                    <a href="tel:+91-832-xxx-xxxx">+919889767566</a>
+                    <p>Panaji, Goa, India</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Climate Migration Hub. Built to raise awareness about climate-induced displacement. Data sources: UN, IDMC, IOM.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
